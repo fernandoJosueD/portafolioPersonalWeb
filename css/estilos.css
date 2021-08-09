@@ -1,0 +1,1375 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;500;700;800&display=swap');
+
+:root{
+    /* colore utilizados en pagina web */
+    --colora:#A2D1E1;
+    --colora-hover:#89d2eb;
+    --colorb:#373737;
+    --colorc:#F8F8F8;
+    --colord: #fff;
+    --colorTextos: #373737;
+    --color-de-piel:#D4AD98;
+    --logotipo-nav:26px;
+    --titulo:25px;
+    --titulo-font-weight: 600;
+    --subtitulo:20px;
+    --nav-enlaces:16px;
+    --texto-normal:15px;
+    /* colores para sombreado de iconos en habilidades */
+    --bg: #e5e5e59a;
+    --shadowLg: #fff;
+    --shadow: rgba(13,39,80,.26);
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+}
+
+
+.body {
+    margin: auto;
+    font-family: 'Dosis', sans-serif;
+    width: 100%;
+
+  }
+
+
+
+  /* ************************************************************* */
+  /* ****************** desplazamiento *************************** */
+  
+  html{
+      scroll-behavior: smooth;
+  }
+  
+
+
+
+  /* ************************************************************* */
+  /******************* CONTENIDO DE NAV ****************************/
+  /* ************************************************************* */
+  
+nav{
+   width: 100%;
+   height: 50px;
+   display: flex;
+   background: var(--colorb); 
+   /* background: rgba(55, 55, 55, 0.042);  */
+   justify-content: space-between;
+   padding-left: 3%;
+   padding-right: 2%;
+   z-index: 2;
+   align-items: center;
+   position: fixed;
+}
+
+.logotipo{
+   width: auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.logotipo h1{
+    font-size: var(--logotipo-nav);
+    display: inline;
+    text-align: center;
+    color: var(--colora);
+    cursor: pointer;
+}
+
+
+.enlaces{
+    display: inline-flex;
+    width: auto;
+    padding: 0px 25px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.enlaces ul li{
+    margin-left: 8px;
+    display: inline-flex;
+    text-align: center;
+    padding: 5px ;
+}
+
+.enlaces ul li a{
+    text-decoration: none;
+    font-size: var(--nav-enlaces);
+    color: var(--colora);
+    font-weight: 300;
+    font-family: 'Dosis', sans-serif;
+    position: relative;
+}
+/*  efecto hover en linea de abajo de cada  link de etiqueta a*/
+.enlaces a::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: var(--colora);
+
+    transform-origin: center;
+    transform: scaleX(0);
+    transition: transform 0.8s;
+}
+.enlaces a:hover::after{
+    transform-origin: center;
+    transform: scaleX(1);
+}
+
+.enlaces ul li a:hover{
+   font-weight: 200;
+}  /* fin de efecto hover en etiqueta a */
+
+.pegajoso{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+/******* iconos de abrir y cerrar ********/
+.fas{
+    color: var(--colora);
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.fa-dice-d6{
+    font-size: var(--logotipo-nav);
+    margin-right: 5px;
+    
+}
+.abrir{
+    display: none;
+}
+
+.enlaces .cerrar{
+    display: none;
+}
+
+
+  /* ************************************************************* */
+  /******************* CONTENIDO PORTADA ***************************/
+  /* ************************************************************* */
+.container {
+    width: 100%;
+    z-index: 1;
+    background-attachment: fixed;
+  }
+  
+  .card-container {
+    margin: auto;
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* position: relative; */
+  
+  }
+
+  .adorno{
+      width: 100%;
+      height: 340px;
+     background: url("../img/5026563.jpg"); 
+      background-size: cover;
+      backface-visibility: hidden;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+   /* *********************** */
+   /* foto de portada de portada pagina */
+  
+  .photo {
+    position:absolute;  
+    top: 230px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin: auto;
+    box-shadow: rgb(68, 70, 70);
+    z-index: 1;
+  }
+  
+  .photo img {
+    width: 100%;
+    height: 100%;
+    border: 6px solid var(--colord);
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 0px -22px;
+  }
+  
+  .container-datos-personales {
+    width: 100%;
+    height: 65vh;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: var(--colorc);
+    cursor: pointer;
+    z-index: 0;
+  }
+  
+  .texto {
+      margin-top: 40px;
+      padding: 5px 20px;
+  }
+
+  .name-animado {
+    color: var(--colorTextos);
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+
+  .texto h4{
+      width: 100%;
+      margin: 0;
+      padding: 5px 10px;
+      color: var(--colorTextos);
+      transition: .5s ease all;
+      text-align: center;
+  }
+  .texto:hover  h4{
+      color: var(--colorb);
+  }
+  
+  .name-animado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+  }
+  .name-animado > div{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: .3s ease all;
+  }
+  .name-animado> div.animacion{
+    transform: translateY(-50px);
+    color: var(--colora);
+    font-weight: 600;
+    
+  }
+
+  .name-animado > div span {
+     line-height: 50px ;
+     font-size: 38px;
+  }
+
+
+  .name-animado .estudiante {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .estudiante h4{
+      text-align: center;
+  }
+
+   .name-animado .segunda-linea{
+      position: absolute;
+      top: 50px;
+  } 
+  /* ************************************************************* */
+  /****************** CONTENIDO ACERCA DE ************************ */
+  /* ************************************************************* */
+.contenedor-perfil{
+    background: var(--colord) /* #d8d8d8 */;
+    width: 100%;
+    min-height: 100vh;
+    transition: 300ms ease all;
+    animation: 1s desvanecer ease all;
+}
+.contenedor-cajas{
+    max-width: 90%;
+    min-height: 100vh;
+    margin: auto;
+    padding-top: 8%;
+    background: /* #c7e8f383 */none;
+    display: grid;
+    padding-left: 2%;
+    padding-right: 2%;
+    grid-template-columns: 25% 25% 50%;
+    grid-template-rows: 25% 20% 20% 10% 15%;
+    background: none;
+    
+}
+
+.about{
+   width: 98%;
+   height: 100%;
+   background: none;
+   padding: 20px 50px;
+   grid-column: span 2;
+   grid-row: span 5;
+   padding-top: 0%;
+}
+
+.subt{
+    margin: 15px;
+    margin-bottom: 5px;
+    color: var(--colora);
+    font-weight: var(--titulo-font-weight); 
+    cursor: pointer;
+    font-size: var(--titulo);
+}
+
+.subt >.number{
+    color: var(--colorc);
+    padding: 2px 10px;
+    background: linear-gradient(90deg, var(--colora) 100% ,  var(--colorc) );
+    border-radius: 50%;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: var(--subtitulo);
+    font-weight: 500;
+}
+
+.about-content P{
+    text-align: justify;
+    margin-bottom: 5px;
+    color: var(--colorTextos);
+    font-size: var(--texto-normal);
+    font-weight: 400;
+}
+
+/* -----boton de Modal para  CV ---------*/
+
+.about ul li {
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
+.about ul li a{
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 30px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 35px; 
+    box-sizing: border-box;
+    text-decoration: none;
+    color: var(--colora);
+    
+    box-shadow: 0 10px 10px rgba(118, 118, 118, 0.3);
+    background: linear-gradient(0deg, rgb(255, 255, 255), rgb(253, 254, 255));
+    transition:  0.40s ease-in-out;
+}
+.about ul li a:hover i{
+    transition: 0.40s ease-in-out;
+    color: var(--colora-hover);
+    box-shadow: none;
+    
+}
+.about ul li :hover{
+    color: var(--colora-hover);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    
+}
+
+.fa-download{
+    color: var(--colora);
+    margin-right: 5px;
+    transition: 0.40s ease-in-out;
+} 
+/* ************************************************************* */
+/* ****************** CONTENIDO MODAL ************************/
+/* ************************************************************* */
+.contenedor-modal{
+    background: rgba(0, 0, 0, 0.542);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  
+
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--colord);
+    width: 50%;
+    padding-bottom: 25px;
+    border-radius: 8px;
+    position: relative;
+    margin-top: 5px;
+    
+    transition: transform 1s;
+    transform: translateY(0%);
+}
+.modal p{
+    color: var(--colorb);
+    background: var(--colora);
+    color: var(--colord);
+    font-size: 17px;
+    font-weight: bold;
+    font-weight: 900;
+    padding: 1px 8px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;
+}
+.modal p:hover{
+    background: var(--colora-hover);
+}
+.modal h2{
+   font-weight: var(--titulo-font-weight);
+   margin-bottom: 5px;
+   margin-top: 5px;
+   color: var(--colorTextos);
+}
+
+.modal iframe{
+    width: 98%;
+    min-height: 80vh;
+    border: 1px solid #8377775b;
+    border-radius: 1px;
+}
+
+.modal-close{
+    transform: translateY(-200%);
+}
+
+/* *************imagen svg************* */
+.contenedor-svg{
+   
+    grid-column: span 1;
+    grid-row: span 5;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.contenedor-svg svg{
+    width: 100%;
+}
+/* contenido de colores imagen svg de pagina */
+#alfa{
+    fill: var(--colora);
+}
+#blanco{
+    fill: var(--colord);
+}
+ #gris{
+    fill: #ccc;
+}
+#negro{
+    fill: #373737;
+}
+#piel{
+   fill: var(--color-de-piel); 
+}
+
+/* ************************************************************* */
+/* ****************** CONTENEDOR HABILIDADES ******************* */
+/* ************************************************************* */
+
+.contenedor-habilidades{
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Dosis', sans-serif;
+    background: var(--colorc);
+}
+
+.contenedor-texto{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding-top: 25px;
+    background: none;
+}
+
+.contenedor-texto h2{
+    font-size: var(--titulo);
+    padding-top: 5%;
+    color: var(--colora);
+    font-weight: var(--titulo-font-weight);
+}
+
+.contenedor-texto p{
+    font-size: var(--texto-normal);
+    font-weight: 400;
+    text-align: center;
+    margin-top: 20px;
+    text-transform: initial;
+    color: var(--colorTextos);
+}
+
+/* contenedor de lista de habilidades */
+/* ---------------------------------- */
+
+.content-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.content-list a{
+    text-align: center;
+    margin: 15px;
+    font-weight: var(--titulo-font-weight);
+    position: relative;
+    padding: 2px 5px;
+    transition: 0.30s ease-in-out;
+    color: var(--colorTextos);
+}
+.content-list a::after{
+    content: " ";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: var(--colora);
+    transform-origin: center;
+    transform: scaleX(0);
+    transition: transform 0.8s;
+}
+.content-list a:hover::after{
+    transform-origin: center;
+    transform: scaleX(1);
+}
+.content-list a:hover{
+    font-weight: 600;
+}
+
+/* contenedor de iconos de habilidades */
+/* ----------------------------------- */
+
+.content-iconos {
+    width: 80%; 
+    height: 350px;
+    margin: auto;
+    padding: 0%;
+    margin: auto;
+    
+}
+.content-iconos ul{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+.content-iconos ul li {
+   list-style: none;
+   width: fit-content;
+   margin: 18px;
+   padding: 20px;
+   border-radius: 8px;
+   /* efecto sombra para los iconos */
+   box-shadow: -10px -10px 10px var(--shadowLg),
+   10px 10px 15px var(--shadow),
+   inset -10px -10px 10px var(--shadowLg),
+   inset 10px 10px 10px var(--shadow);
+   border: 2px solid transparent;
+}
+
+.content-iconos ul li a .fab{
+   color: #ccc;
+   font-size: 40px;
+   transition: 1s ease-in-out;
+} 
+
+.fa-linkedin, .fa-github{
+    cursor: pointer;
+}
+
+
+/* efecto hover para cada icono aplicando color personalizado */
+.content-iconos ul :nth-child(1):hover .fa-linkedin{
+   color: #0e76a8;
+}
+.content-iconos ul :nth-child(2):hover .fa-github{
+   color: #24292E;
+}
+.content-iconos ul :nth-child(3):hover .fa-git-square{
+   color: #EB4D28;
+}
+.content-iconos ul :nth-child(4):hover .fa-html5{
+   color: #F4511C;
+}
+.content-iconos ul :nth-child(5):hover .fa-css3-alt{
+   color: #0396DE;
+}
+.content-iconos ul :nth-child(6):hover .fa-js-square{
+   color: #F7CF00;
+}
+.content-iconos ul :nth-child(7):hover .fa-android{
+   color: #30D780;
+}
+.content-iconos ul :nth-child(8):hover .fa-database{
+   color: #00718B;
+}
+.content-iconos ul :nth-child(9):hover .fa-project-diagram{
+   color: #CB4619;
+} 
+
+/* ************************************************************* */
+/* ***************** CONTENEDOR DE PROYECTOS ******************* */
+/* ************************************************************* */
+
+.prototipo{
+    margin: auto;
+    align-items: center;
+    margin-bottom: 0px;
+    min-height: 100vh;
+    padding-top: 60PX;
+}
+.prototipo h1{
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    color: var(--colora);
+    font-size: var(--titulo);
+    font-weight: 600;
+    margin-bottom: 45PX;
+}
+
+.proyectos{/* contenedor de  cards */
+    margin: auto;
+    width: 90%;
+    margin-bottom: 0px;
+    margin-top: 0;    
+    padding-top: 2vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));/* modifica automaticamente los grid haciendolo responseve */
+    grid-gap: 0px;
+}
+
+.card{ 
+    transition: all .6s cubic-bezier(0.175, 0.885, 0, 1);
+    opacity: 1;
+    background-color: var(--colord);
+   /*  width: 190px; */
+  /*   max-width: 190px; */
+    min-width: 170px;
+    max-height: 350px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 8px 4px -7px rgba(0, 0, 0,0.1);
+    margin-bottom: 35px;
+    grid-column: span 1;
+    justify-self: center;/* centra css grid */
+    justify-items: center;
+    border: 1px solid var(--colorc);
+    cursor: pointer;
+}
+
+.card:hover{
+    box-shadow: 0px 15px 6px -4px rgba(0, 0, 0,0.2);
+    transform: scale(1.10, 1.10);
+    opacity: 5;
+    border: none;
+}
+
+.fa-github{
+    margin-top: 3px;
+    font-size: 30px;
+    transition: 0.8s ease-in-out;
+    color: var(--colorb);
+}
+
+.fa-github:hover{
+    color: var(--colorb);
+}
+
+.card__img{
+    visibility: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 190px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* cambio de imagen para cada card de proyecto */
+.card--1 .card__img--hover{
+    background-image:  url("../img/21.jpg");
+   /*  background-position: top 5%; */
+}
+
+.card--2 .card__img--hover{
+    background-image: url("../img/logo.jpg");
+}
+
+.card--3 .card__img--hover{
+    background-image: url("../img/Screenshot_20210805-045146_Bitacora\ Alimenticia.jpg");
+}
+
+.card--4 .card__img--hover{
+    background-image: url("../img/fotoPagina.png");
+}
+.card--5 .card__img--hover{
+    background-image: url("../img/agenda.png");
+}
+
+.card__info-hover{
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    opacity: 0;
+    top: 0;
+}
+
+.card__img--hover{
+    transition: 0.4s all ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: absolute;
+    height: 195px;
+    
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    top: 0;
+}
+
+.card__info{
+    z-index: 2;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+}
+
+.card__category{
+    text-transform: uppercase;
+    font-size:  12px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: var(--colorTextos);
+}
+
+.card__title{
+    margin: 5px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--colorTextos);
+}
+
+.card__by{
+    font-size: 15px;
+   
+    width: 100%;
+}
+.card__by i{
+    display: flex;
+    justify-content: space-evenly;
+    /* -ms-flex-item-align: auto; */
+}
+
+.card__author{
+    font-weight: 600;
+    text-decoration: none;
+}
+/* efecto de transparencia */
+.card:hover .card__img--hover{
+    height: 100%;
+    opacity: 0.3;
+}
+.card:hover .card__info{
+    background: transparent;
+    position: relative;
+    font-weight: 800;
+}
+
+.card:hover .card__info-hover{
+    opacity: 1;
+}
+
+.card__author {
+    color: var(--colorb);
+    font: 25px;
+    position: relative;
+}
+
+/* ************************************************************* */
+/* ****************** footer de pagina web ********************* */
+/* ************************************************************* */
+
+footer{
+    display: block;
+    z-index: 1;
+    padding-top: 40px;
+   background: var(--colord);
+}
+
+.content-footer{
+    background: var(--colorb);
+    width: 100%;
+    bottom: 0px;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--colord);
+    border-top-left-radius: 30px  ;
+    border-top-right-radius: 30px;
+}
+
+.content-footer .footer-texto a{
+    text-decoration: none;
+    color: var(--colord);
+    transition: 0.30s ease-in-out;
+}
+.content-footer .footer-texto a :hover{
+    text-decoration: none;
+    color: var(--colora-hover);
+}
+.content-footer .footer-texto a .footer-email{
+    margin-top: 25px;
+    padding-bottom: 3px;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 0px;
+    font-weight: 100;
+    border-bottom: 1px solid var(--colorc);
+    cursor: pointer;
+}
+.content-footer .footer-texto .footer-email .far{
+    margin-right: 2px;
+}
+
+.content-footer .icono-footer{
+    width: 70%;
+   /*  border-bottom: 1px solid var(--colora-hover); */
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+.content-footer .footer-texto p{
+    margin-top: 15px;
+    font-weight: 100;
+    letter-spacing: 3px;
+}
+
+.content-footer .icono-footer  .fab{
+    font-size: 23PX;
+    color: var(--colord);
+    margin: 0PX 20px;
+    padding: 15px;
+    border-radius: 50%;
+    border: 0.1px solid var(--colord);
+    transition: 0.40s ease-in-out;
+}
+
+.icono-footer .fab:hover {
+    background: var(--colora);
+    color: var(--colorb);
+    border: 1px solid var(--colora);
+}
+
+/* posicion de linea footer con movimiento lieneal infinito */
+.icono-footer{
+    position: relative;
+}
+.icono-footer .fa-github, .fa-linkedin-in{
+    cursor: pointer;
+}
+
+.underline{
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    overflow: hidden;
+}
+
+.underline span{
+    width: 45px;
+    height: 100%;
+    background: var(--colora-hover);
+    border-radius: 3px;
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    animation: movimiento 6s linear infinite;
+}
+
+/* ************************************************************* */
+/* ****************** CONTENIDO RESPONSIVE ********************* */
+/* ************************************************************* */
+@media screen and (max-width: 900px) {
+    nav{
+        height: 50px;
+    }
+    .logotipo h1{
+        font-size: 28px;
+    }
+    .enlaces ul li a{
+        font-size: 17px;
+    }
+    .logotipo h1{
+        font-size: 30px;
+    }
+    /***************/
+    .photo{
+        z-index: 1;
+    }
+    /****conenedor deacerca de */
+   .contenedor-cajas{
+ 
+    padding-top: 10%;
+    max-width: 100%;
+    
+}
+
+.contenedor-perfil{
+    /* background: #0396DE; */
+}
+.contenedor-svg svg{
+width: 80%;
+ 
+}
+
+/* boton de descarga cv */
+   .fa-download{font-size: 15px;}
+    
+   .about ul li a{
+       padding: 4px 25px;
+       font-size: 20px;
+   }
+
+   .btn-cv{
+        padding-bottom: 10px;
+    }
+
+
+    /* contenedor iconos de*/
+    .contenedor-iconos{
+        padding: 0px;
+    }
+    
+
+}
+
+/*  */
+@media screen and (max-width: 790px) {
+    
+    .container-datos-personales{
+        z-index: 0;
+    }
+    .container{
+        z-index: 1;
+    }
+    nav{
+        z-index: 2;
+        padding-left: 5%;
+        padding-right: 5%;
+        height: 50px;
+        position: fixed;
+    }
+
+     /***********body *************/
+     .adorno{
+         height: 315px;
+     }
+     .photo {
+        position:absolute;  
+        z-index: 1;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        margin: auto;
+        box-shadow: rgb(68, 70, 70);
+      }
+    
+      .card-container {
+        background-size: 115%;
+      }
+    
+      .container-datos-personales {
+        top: 370px;
+      }
+     /* **************************************** */ 
+    /******** contenedor nav enlaces *************/
+    .logotipo h1{
+        font-size: 22px ;
+    }
+
+    .enlaces-adicionales{
+        z-index: 2;
+        position: fixed;
+        background-color: rgb(55, 55, 55);
+        display: flex; 
+        flex-direction: column;
+        width: 100%;
+        height: 370px;
+        left: -100%; 
+        top: 0%;
+        text-align: center;
+        justify-content: space-evenly;
+        align-items: center;
+        border-bottom-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+    }
+    
+      .enlaces-adicionales.show{
+        left: 0%;
+        z-index: 3;
+        animation: desvanecer 400ms ease-in ;
+       }
+      
+      .enlaces .cerraria{
+           display: block;
+       } 
+
+    .abrir{
+       display: block;  
+    }
+    /* **************************** */
+   /***** contenedor acerca de ******/
+
+   .contenedor-perfil{
+       padding: 0;
+       background: none;
+   }
+   .contenedor-cajas{
+       padding-top: 10%;
+       width: 100%;
+       padding-top: 5%;
+   }
+   .about{
+       width: 100%;
+        grid-column: span 3;
+        grid-row: span 3;
+        padding-left:0 ;
+        padding-right: 0;
+   }
+   
+   .about-content{
+       padding: 10px;
+   }
+   .contenedor-svg {
+    margin-top: 15px;
+    width: 100%;
+   
+    padding: 0%;
+    grid-column: span 5;
+   
+}
+.contenedor-svg svg{
+    width: 40px;
+  
+}
+   
+   .contenedor-cajas .btn-cv #icono{
+       width: 50px;
+
+   }
+
+   .contenedor-cajas .contenedor-svg svg{
+    width: 60%;
+}
+.subt{
+    font-size: 18px;
+}
+
+/* boton cv */
+.fa-download{
+    color: var(--colora);
+}
+.about ul li a{
+    color: var(--colora);
+}/* ********************* */
+/* contenedor modal */
+        .modal{
+            width: 96%;
+        }
+
+/* ************************* */
+/* CONTENIDO PROYECTO */
+/* ------------------------- */
+.prototipo{
+    width: 100%;
+}
+
+
+.proyectos{/* contenedor de  cards */
+width: 90%;
+margin-bottom: 0px;
+margin-top: 0;    
+padding-bottom: 5vh;
+padding-top: 2vh;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));/* modifica automaticamente los grid haciendolo responseve */
+grid-gap: 0px;
+}
+
+
+
+
+.card{ 
+min-width: 140px;
+max-height: 350px;
+position: relative;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0px 8px 4px -7px rgba(0, 0, 0,0.1);
+margin-bottom: 35px;
+grid-column: span 1;
+justify-self: center;/* centra css grid */
+justify-items: center;
+border: 1px solid var(--colorc);
+}
+
+
+
+.card:hover{
+box-shadow: 0px 12px 4px -2px rgba(0, 0, 0,0.2);
+transform: scale(1.10, 1.10);
+opacity: 5;
+border: none;
+}
+
+.fa-github{
+margin-top: 3px;
+font-size: 25px;
+}
+/* ******************* */
+
+
+}
+
+@media screen and (max-width:500px) {
+    nav{
+       
+        padding-left: 5%;
+        padding-right: 1%;
+       
+    }
+
+    .enlaces{
+        padding: 0px 18px;
+    }
+
+    
+/* ******************************** */
+/* ***** CONTENIDO ACERCA DE ****** */
+
+.about{
+    grid-gap: 0px;
+    /* background: #CB4619; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.about-content h2{
+    margin-top: 5px;
+    margin-bottom: 1px;
+    padding-top: 15px;
+}
+.about ul li{
+    margin-top: 0;
+}
+    
+    .contenedor-cajas .contenedor-svg {
+        margin-top: 95px;
+      
+        height: 60px;
+    }
+    .contenedor-cajas .contenedor-svg svg{
+        width: 50%;
+
+    }
+
+/* linea de footer */
+
+    .underline span{
+       
+        animation: movimiento 3s linear infinite;
+    }
+    
+}
+
+  /* esta enfocado solo en los iconos de habilidades */
+@media screen and (max-width:430px) {
+    .contenedor-habilidades{
+        padding-top: 30px;
+    }
+    .contenedor-texto h2{
+        font-size: 24px;
+    }
+
+.content-list{
+    width: 95%;
+   /*  display: list-item;
+    list-style: none; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr));
+    grid-gap: 0px; 
+
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.content-list a{
+    font-size: 15px;
+   padding: 0px;
+   display: list-item;
+   list-style: none;
+   margin: 3px;
+}
+
+.content-iconos {
+    width: 94%;
+    height: auto;
+    padding-bottom: 15px;
+}
+    
+.content-iconos ul li{
+    margin: 8px;
+    padding: 14px;
+}
+.content-iconos ul li a .fab{
+    font-size: 25px;
+}
+
+/* ******************************** */
+/* ***** CONTENIDO ACERCA DE ****** */
+.contenedor-cajas{
+    padding-top: 10px;
+}
+.about{
+    grid-gap: 0px;
+    /* background: #CB4619; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.about-content h2{
+    margin-bottom: 1px;
+}
+.about ul li{
+    margin-top: 0;
+}
+
+
+
+
+/* ****************************** */
+/* ******CONTENIDO PROYECTO****** */
+.prototipo{
+    width: 100%;
+}
+
+
+.proyectos{/* contenedor de  cards */
+width: 95%;
+margin-bottom: 0px;
+margin-top: 0;    
+padding-bottom: 5vh;
+padding-top: 2vh;
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));/* modifica automaticamente los grid haciendolo responseve */
+grid-gap: 0px;
+}
+
+
+
+
+.card{ 
+min-width: 120px;
+max-height: 350px;
+position: relative;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0px 8px 4px -7px rgba(0, 0, 0,0.1);
+margin-bottom: 35px;
+grid-column: span 1;
+justify-self: center;/* centra css grid */
+justify-items: center;
+border: 1px solid var(--colorc);
+}
+
+
+
+.card:hover{
+box-shadow: 0px 12px 4px -2px rgba(0, 0, 0,0.2);
+transform: scale(1.10, 1.10);
+opacity: 5;
+border: none;
+}
+
+.fa-github{
+margin-top: 3px;
+font-size: 25px;
+}
+
+
+
+}
+ 
+
+
+/*animacion para desvanecer */
+@keyframes desvanecer {
+    0%{
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    50%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 10;
+    }
+    
+}
+
+@keyframes movimiento{
+    0%{
+        left: -20px;
+    }
+    100%{
+        left: 100%;
+    }
+}
